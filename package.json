@@ -1,8 +1,8 @@
 {
   "name": "async-next",
-  "version": "0.0.10",
+  "version": "0.1.10",
   "description": "Async callback manager",
-  "main": "/lib/async.js",
+  "main": "lib/async.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
