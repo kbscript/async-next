@@ -121,15 +121,7 @@
             console.log( "test4" );
             next( );
         }, 1000, next )
-    } );
-    
-    var list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], contact = { id: 1, name: "Kevin", id: 2, name: "Caleb" };
-    async.next.forEach( list, contact, function ( item, index, contact ) {
-        var sql = "";
-        mssql( sql, {}, function ( err, result ) { 
-            console.log( "I'm done with this one." );
-        } );
-    } );
+    } );   
     
     async.next.start( function testWrapup( data ) {
         console.log( "Done" );        
