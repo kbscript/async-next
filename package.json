@@ -1,0 +1,24 @@
+{
+  "name": "async-next",
+  "version": "0.0.0",
+  "description": "Async callback manager",
+  "main": "/lib/async.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KevinBarnett5506/async-next.git"
+  },
+  "keywords": [
+    "async",
+    "callback",
+    "next"
+  ],
+  "author": "Kevin Barnett <kevinbarnett5506@gmail.com>",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/KevinBarnett5506/async-next/issues"
+  },
+  "homepage": "https://github.com/KevinBarnett5506/async-next"
+}
