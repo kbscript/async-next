@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/KevinBarnett5506/async-next.git"
+    "url": "https://github.com/kbscript/async-next/"
   },
   "keywords": [
     "async",
@@ -18,7 +18,7 @@
   "author": "Kevin Barnett <kevinbarnett5506@gmail.com>",
   "license": "BSD-2-Clause",
   "bugs": {
-    "url": "https://github.com/KevinBarnett5506/async-next/issues"
+    "url": "https://github.com/kbscript/async-next/issues"
   },
-  "homepage": "https://github.com/KevinBarnett5506/async-next"
+  "homepage": "https://github.com/kbscript/async-next"
 }
