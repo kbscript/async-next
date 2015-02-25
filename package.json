@@ -1,6 +1,6 @@
 {
   "name": "async-next",
-  "version": "0.0.0",
+  "version": "0.0.10",
   "description": "Async callback manager",
   "main": "/lib/async.js",
   "scripts": {
