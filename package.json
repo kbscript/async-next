@@ -1,7 +1,7 @@
 {
   "name": "async-next",
-  "version": "0.1.10",
-  "description": "Async callback manager",
+  "version": "0.1.11",
+  "description": "Async callback manager.  Use async.now to run a set of functions in parallel or async.next to run in series.",
   "main": "lib/async.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
