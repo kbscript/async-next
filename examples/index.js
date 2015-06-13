@@ -42,7 +42,7 @@ var parallel = function () {
 
     //build file array to use as test update
     for (i=0; i < 3; i++) {
-        filesToUpdate.push({path: path.join(__dirname,'./files/file' + i + '.txt'), text: 'New Test Data for file: ' + i})
+        filesToUpdate.push({path: path.join(__dirname,'./files/file' + (i + 1) + '.txt'), text: 'New Test Data for file: ' + (i + 1)})
     }
 
     //now run async update
@@ -99,7 +99,7 @@ var combined = function() {
 
         //build file array to use as test update
         for (i=0; i < 3; i++) {
-            filesToUpdate.push({path: path.join(__dirname,'./files/file' + i + '.txt'), text: 'New Test Data for file: ' + i})
+            filesToUpdate.push({path: path.join(__dirname,'./files/file' + (i + 1) + '.txt'), text: 'New Test Data for file: ' + (i + 1)})
         }
 
         //now run async update
