@@ -1,6 +1,6 @@
 {
   "name": "async-next",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "description": "Async callback manager.  Use async.now to run a set of functions in parallel or async.next to run in series.",
   "main": "lib/async.js",
   "scripts": {
