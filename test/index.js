@@ -3,6 +3,25 @@ var Async = require('../lib/async.js');
 var currentTime = new Date();
 currentTime = currentTime.toLocaleDateString() + ' ' + currentTime.toLocaleTimeString();
 
+describe("Testing required params",function(){
+    var async = new Async();
+    it("Should fail if first param isn't a callback function.", function () {
+        assert.throws(function () {
+            async.next("Not a function.");
+        },"async.next requires the first param to be a callback function.");
+
+        assert.throws(function () {
+            async.next({value: "also not a function."});
+        },"async.next requires the first param to be a callback function.");
+
+        assert.doesNotThrow(function () {
+            async.next(function (next) {
+
+            },"Should be able to use this function.")
+        });
+    })
+});
+
 describe("Testing series calls",function () {
     var async = new Async();
 
@@ -176,4 +195,40 @@ describe("Using series and parallel combined and nested.", function(){
         });
     });
 
-});;
+});
+
+describe("Using params on callbacks for async.next.", function () {
+    var async = new Async(), myObj = {id: 0, name: 'Kevin'};
+
+    async.next(function(next){
+        next("string value.", 12, myObj);
+    });
+
+    async.next(function(next, param1, param2, param3){
+        it("Should pass params from async.next callback to the next async.next function.", function(){
+            assert.equal(param1,"string value.","There was a problem getting the first parameter.");
+            assert.equal(param2, 12, "There was a problem getting the second parameter.");
+            assert.deepEqual(param3, {id: 0, name: 'Kevin'}, "There was a problem getting the third parameter.");
+        });
+    });
+
+    async.next.start()
+});
+
+describe("Using params on callbacks for async.now.", function () {
+    var async = new Async(), params = [{id: 0, name:'Kevin'}, {id: 1, name: 'Barnett'}], i, updatedParams = [];
+
+    it("Params to async.now callbacks are passed after callback function and are inserted after next.", function (done) {
+        for (i=0; i < params.length;i++){
+            async.now(function (next, param, index) {
+                updatedParams[index] = param;
+                next();
+            }, params[i], i);
+        }
+
+        async.now.start(function () {
+            assert.deepEqual(updatedParams, params,"Params should be in same order and value.");
+            done();
+        });
+    });
+});

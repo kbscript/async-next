@@ -6,30 +6,20 @@ var series = function () {
     var async = new Async();
 
     async.next(function (next) {
-        console.log('Done with async.next 1');
-        next();
+        var count = 0;
+        console.log('doing step 1');
+        count++;
+        next({value: "new value"}, count);
     });
 
-    async.next(function (next) {
-        console.log('Done with async.next 2');
-        next();
-    });
-
-    async.next(function (next) {
-        console.log('Done with async.next 3');
-        next();
-    });
-
-    async.next(function (next) {
-        console.log('Done with async.next 4');
+    async.next(function (next, paramsFromFirstAsyncNext, count) {
+        console.log('doing step 2');
+        console.log('using passed params: ' + paramsFromFirstAsyncNext.value + " count: " + count);
         next();
     });
 
     async.next.start(function () {
-        //the callback function for async.next.start is optional
-        console.log("done testing async.next.\n\n");
-
-        //run next test
+        console.log('All done.\n\n');
         parallel();
     });
 };
