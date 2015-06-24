@@ -1,6 +1,6 @@
 {
   "name": "async-next",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "description": "Async callback manager.  Use async.now to run a set of functions in parallel or async.next to run in series.",
   "main": "lib/async.js",
   "scripts": {
@@ -16,7 +16,7 @@
     "next"
   ],
   "author": "Kevin Barnett <kevinbarnett5506@gmail.com>",
-  "license": "BSD-2-Clause",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/kbscript/async-next/issues"
   },
